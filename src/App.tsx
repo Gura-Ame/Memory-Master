@@ -5,6 +5,7 @@ import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import { DataTable } from "@/components/data-table"
 import { SectionCards } from "@/components/section-cards"
 import { SiteHeader } from "@/components/site-header"
+import { ThemeProvider } from "@/components/theme-provider"
 import {
   SidebarInset,
   SidebarProvider,
@@ -14,7 +15,7 @@ import data from "./app/dashboard/data.json"
 
 function App() {
   return (
-    <>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <SidebarProvider
         style={
           {
@@ -22,6 +23,7 @@ function App() {
             "--header-height": "calc(var(--spacing) * 12)",
           } as React.CSSProperties
         }
+        className='geist'
       >
         <AppSidebar variant="inset" />
         <SidebarInset>
@@ -39,7 +41,7 @@ function App() {
           </div>
         </SidebarInset>
       </SidebarProvider>
-    </>
+    </ThemeProvider>
   )
 }
 

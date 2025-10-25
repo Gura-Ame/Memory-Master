@@ -31,6 +31,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { ModeToggle } from "./mode-toggle"
 
 // Note: we translate labels inside the component so hooks can be used.
 
@@ -176,6 +177,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavDocuments items={data.documents} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
+      <ModeToggle />
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>

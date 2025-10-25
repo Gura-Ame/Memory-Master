@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@500&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -74,6 +75,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* scrollbar colors (defaults for light mode) */
+  --scrollbar-bg: rgba(0,0,0,0.06);
+  --scrollbar-thumb: rgba(0,0,0,0.24);
 }
 
 .dark {
@@ -108,6 +112,15 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  /* scrollbar colors for dark mode */
+  --scrollbar-bg: rgba(255,255,255,0.04);
+  --scrollbar-thumb: rgba(255,255,255,0.12);
+}
+
+.geist {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 @layer base {
@@ -117,5 +130,29 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Scrollbar styling (WebKit + Firefox). Colors use CSS variables above and will
+     change automatically when the `.dark` class is applied to the root element. */
+  * {
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+    scrollbar-width: thin;
+  }
+
+  /* WebKit-based browsers */
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
+    border: 3px solid transparent; /* gives padding effect */
+    background-clip: padding-box;
   }
 }
