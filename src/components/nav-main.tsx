@@ -1,13 +1,12 @@
-import { IconCirclePlusFilled, IconMail, type Icon } from "@tabler/icons-react"
+import { IconCirclePlusFilled, type Icon } from "@tabler/icons-react"
 import { useTranslation } from 'react-i18next'
 
-import { Button } from "@/components/ui/button"
 import {
-    SidebarGroup,
-    SidebarGroupContent,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
 export function NavMain({
@@ -32,14 +31,6 @@ export function NavMain({
               <IconCirclePlusFilled />
               <span>{t('sidebar.quickCreate')}</span>
             </SidebarMenuButton>
-            <Button
-              size="icon"
-              className="size-8 group-data-[collapsible=icon]:opacity-0"
-              variant="outline"
-            >
-              <IconMail />
-              <span className="sr-only">{t('sidebar.inbox')}</span>
-            </Button>
           </SidebarMenuItem>
         </SidebarMenu>
         <SidebarMenu>
