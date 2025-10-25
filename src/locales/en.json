@@ -1,0 +1,35 @@
+{
+  "sidebar": {
+    "brand": "Memory Master",
+    "quickCreate": "Quick Create",
+    "inbox": "Inbox"
+  },
+  "nav": {
+    "main": {
+      "dashboard": "Dashboard",
+      "lifecycle": "Lifecycle",
+      "analytics": "Analytics",
+      "projects": "Projects",
+      "team": "Team"
+    },
+    "clouds": {
+      "capture": "Capture",
+      "proposal": "Proposal",
+      "prompts": "Prompts",
+      "items": {
+        "activeProposals": "Active Proposals",
+        "archived": "Archived"
+      }
+    }
+  },
+  "navSecondary": {
+    "settings": "Settings",
+    "getHelp": "Get Help",
+    "search": "Search"
+  },
+  "documents": {
+    "dataLibrary": "Data Library",
+    "reports": "Reports",
+    "wordAssistant": "Word Assistant"
+  }
+}

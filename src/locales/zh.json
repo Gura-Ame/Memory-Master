@@ -1,0 +1,35 @@
+{
+  "sidebar": {
+    "brand": "記憶大師",
+    "quickCreate": "快速建立",
+    "inbox": "收件匣"
+  },
+  "nav": {
+    "main": {
+      "dashboard": "儀表板",
+      "lifecycle": "生命週期",
+      "analytics": "分析",
+      "projects": "專案",
+      "team": "團隊"
+    },
+    "clouds": {
+      "capture": "擷取",
+      "proposal": "提案",
+      "prompts": "提示",
+      "items": {
+        "activeProposals": "進行中提案",
+        "archived": "已封存"
+      }
+    }
+  },
+  "navSecondary": {
+    "settings": "設定",
+    "getHelp": "取得協助",
+    "search": "搜尋"
+  },
+  "documents": {
+    "dataLibrary": "資料庫",
+    "reports": "報告",
+    "wordAssistant": "文字助手"
+  }
+}
