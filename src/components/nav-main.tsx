@@ -1,42 +1,36 @@
-import { IconCirclePlusFilled, type Icon } from "@tabler/icons-react"
-import { useTranslation } from 'react-i18next'
+import type { NavItem } from "@/App"
 
 import {
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-export function NavMain({
+import "../nav.css"
+
+export function NavGroup({
   items,
+  currentItem,
+  label,
+  className
 }: {
-  items: {
-    title: string
-    url: string
-    icon?: Icon
-  }[]
+  items: NavItem[]
+  currentItem: NavItem
+  label?: string
+  className?: string
 }) {
-  const { t } = useTranslation()
   return (
-    <SidebarGroup>
-      <SidebarGroupContent className="flex flex-col gap-2">
-        <SidebarMenu>
-          <SidebarMenuItem className="flex items-center gap-2">
-            <SidebarMenuButton
-              tooltip={t('sidebar.quickCreate')}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
-            >
-              <IconCirclePlusFilled />
-              <span>{t('sidebar.quickCreate')}</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+    <SidebarGroup className={className}>
+      {label && <SidebarGroupLabel>{label}</SidebarGroupLabel>}
+      <SidebarGroupContent className="flex flex-col">
         <SidebarMenu>
           {items.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton tooltip={item.title}>
+              <SidebarMenuButton tooltip={item.title}
+                className={item === currentItem ? "highlight" : ""}>
                 {item.icon && <item.icon />}
                 <span>{item.title}</span>
               </SidebarMenuButton>
